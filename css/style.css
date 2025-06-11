@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: #1d1d1d;
   background-color: #f9f9f9;
@@ -13,206 +13,336 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #0c1f15;
+  background-color: transparent;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.5rem 3rem;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
 }
 
 .navbar .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
+  color: white;
 }
 
 .navbar nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .navbar nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
 .cta {
-  background-color: #17b24b;
+  background-color: transparent;
   color: white;
-  border: none;
-  padding: 0.5rem 1.2rem;
+  border: 2px solid white;
+  padding: 0.6rem 1.5rem;
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background-color: white;
+  color: #0c1f15;
 }
 
 /* Hero Section */
 .hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #17b24b 0%, #0c1f15 100%);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  background-image: url('assets/fruta.jpeg');
-  background-size: cover; /* Asegura que la imagen cubra toda la sección */
-  background-position: center; /* Centra la imagen */
-  height: 100vh; /* Hace que la sección ocupe toda la ventana */
-  color: white; /* Asegura que el texto sea visible */
-  text-align: center;
-  position: relative; /* Para asegurar que el texto esté encima de la imagen */
-}
-
-/* Hero text styling */
-.hero-text {
-  position: absolute; /* Coloca el texto encima de la imagen */
-  z-index: 1;
-  max-width: 800px;
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar legibilidad */
-  border-radius: 5px;
-}
-
-.hero-text h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-}
-
-.hero-text span {
-  color: #17b24b;
-  font-weight: bold;
-}
-
-.hero-text p {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-}
-
-.order-btn {
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  background-color: #17b24b;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0 6rem;
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-image img {
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transform: rotate(30deg);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-btn.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.hero-btn.secondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.hero-decoration {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+}
+
+.hero-decoration .circle {
   width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  position: absolute;
+}
+
+.hero-decoration .circle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  right: -50px;
+  top: -50px;
+}
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  font-weight: 700;
+  color: #17b24b;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  font-weight: 300;
+}
+
+.hero-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: white;
+  color: #0c1f15;
+}
+
+/* Power of Health Section */
+.power-health {
+  padding: 5rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.power-health .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.power-health h1 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  color: #0c1f15;
+  line-height: 1.3;
+}
+
+.health-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.health-card {
+  text-align: left;
+  max-width: 300px;
+}
+
+.health-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #17b24b;
+  font-weight: 600;
+}
+
+.health-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 /* Benefits */
 .benefits {
-  padding: 3rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
   background: #fff;
 }
 
 .benefits h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .product-row img {
   width: 80%;
   max-width: 600px;
+  border-radius: 0.5rem;
 }
 
 .feature-icons {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   flex-wrap: wrap;
 }
 
 .feature {
   background-color: #17b24b;
   color: white;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 6px;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
 /* Ingredients */
 .ingredients {
   background-color: #eafff1;
-  padding: 3rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
 }
 
 .ingredients h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.2rem;
-  max-width: 800px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .grid .item {
   background: white;
-  border: 1px solid #ccc;
-  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  padding: 1.5rem;
   border-radius: 5px;
   font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.grid .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Supplement Collection */
 .collection {
   background-color: #fef7fb;
-  padding: 3rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
 }
 
 .collection-header h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .collection-header p {
   color: #6b6b6b;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
 }
 
 .product-cards {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 
 .card {
   background: white;
   border-radius: 1rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-  padding: 1.2rem;
-  max-width: 280px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  width: 280px;
   text-align: left;
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 .card img {
   width: 100%;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .card h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .card .price {
   font-weight: bold;
   color: #000;
+  font-size: 1.1rem;
 }
 
 .card .old-price {
@@ -224,15 +354,21 @@ body {
 
 .buy-btn {
   position: absolute;
-  bottom: 1.2rem;
-  right: 1.2rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   background: #8c46ff;
   color: white;
   border: none;
   border-radius: 50%;
-  padding: 0.5rem 0.7rem;
-  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+  background: #6e2fd9;
 }
 
 /* Footer */
@@ -240,30 +376,1181 @@ body {
   background-color: #0c1f15;
   color: white;
   text-align: center;
-  padding: 3rem 2rem 2rem;
+  padding: 5rem 2rem 2rem;
 }
 
 .footer h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .footer p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .get-started {
   background-color: #17b24b;
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 2.5rem;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.get-started:hover {
+  background-color: #129a3d;
 }
 
 .footer-bottom {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: 0.9rem;
   color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .hero {
+    padding: 0 2rem;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .health-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .health-card {
+    max-width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .power-health h1 {
+    font-size: 2rem;
+  }
+  
+  .feature-icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content, .health-cards, .product-row, .grid, .product-cards {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Efecto hover para tarjetas de productos */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón flotante */
+.floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #17b24b;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  background-color: #129a3d;
+}
+
+.contact {
+  background-color: #f9f9f9;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Sección de Autenticación */
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.auth-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  color: #0c1f15;
+  font-size: 2rem;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.auth-btn {
+  background-color: #17b24b;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+  background-color: #129a3d;
+}
+
+.auth-text {
+  margin-top: 1.5rem;
+  color: #555;
+}
+
+.auth-text a {
+  color: #17b24b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Botones de Auth en Navbar */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.cta.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta.secondary:hover {
+  background-color: white;
+  color: #0c1f15;
+}
+/* Estilos Generales para Login y Register */
+/* Estilos para el tema oscuro */
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121f17;
+  background-image: url('assets/hojas-textura-dark.png'); /* Textura de hojas en modo oscuro */
+  background-size: 30%;
+  background-blend-mode: overlay;
+  padding: 2rem;
+}
+
+.auth-container {
+  background: #1a2e22;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  border: 1px solid rgba(46, 139, 87, 0.3);
+}
+
+.auth-container h2 {
+  margin-bottom: 2rem;
+  color: #e0f0e5;
+  font-size: 2.2rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.auth-container h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #2e8b57;
+  margin: 0.5rem auto 0;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #2a3e32;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: #121f17;
+  color: #e0f0e5;
+}
+
+.auth-container input:focus {
+  border-color: #2e8b57;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.3);
+}
+
+.auth-container input::placeholder {
+  color: #5a7c6c;
+}
+
+.auth-btn {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.auth-btn:hover {
+  background-color: #3cb371;
+  transform: translateY(-2px);
+}
+
+.auth-text {
+  margin-top: 1.5rem;
+  color: #5a7c6c;
+}
+
+.auth-text a {
+  color: #3cb371;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.auth-text a:hover {
+  color: #2e8b57;
+  text-decoration: underline;
+}
+
+/* Decoración orgánica (opcional) */
+.auth-container::before {
+  content: "🌿";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  font-size: 1.5rem;
+  opacity: 0.5;
+  filter: brightness(0.8);
+}
+
+.auth-btn {
+  box-shadow: 0 0 10px rgba(46, 139, 87, 0.5);
+}
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+.auth-btn:hover {
+  animation: pulse 1.5s infinite;
+}
+
+
+/* Sección de Simulación Nutricional */
+.simulation {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #f0f7f4;
+}
+
+.simulation h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #0c1f15;
+}
+
+.simulation p {
+  color: #6b6b6b;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.simulation-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+#nutrition-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #0c1f15;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.simulation-btn {
+  background-color: #17b24b;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.simulation-btn:hover {
+  background-color: #129a3d;
+}
+
+.results-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+.result-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.result-label {
+  font-weight: 500;
+  color: #0c1f15;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.result-value {
+  font-weight: bold;
+  color: #17b24b;
+  font-size: 1.1rem;
+}
+
+.result-category {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+.food-recommendations {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.food-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.food-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 280px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  
+}
+
+.food-card img {
+  background-color: #f5f5f5;
+  object-fit: cover;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.food-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.food-card-content {
+  padding: 1.5rem;
+}
+
+.food-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #0c1f15;
+}
+
+.food-card .calories {
+  display: inline-block;
+  background: #e8f5e9;
+  color: #17b24b;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.food-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.food-card .recipe-btn {
+  background: #17b24b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.food-card .recipe-btn:hover {
+  background: #129a3d;
+}
+
+@media (max-width: 768px) {
+  .simulation-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #nutrition-form,
+  .results-container {
+    max-width: 100%;
+  }
+}
+
+/* Comparison Section */
+.comparison {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4f0f5 100%);
+  text-align: center;
+}
+
+.comparison .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.comparison h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0c1f15;
+  font-weight: 600;
+}
+
+.comparison .subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.plan {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.plan.featured {
+  border: 2px solid #17b24b;
+  transform: scale(1.03);
+}
+
+.plan-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5rem;
+}
+
+.plan-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #0c1f15;
+}
+
+.plan-header .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #17b24b;
+}
+
+.plan-header .price span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #777;
+}
+
+.plan-header p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.features {
+  text-align: left;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  padding: 0.7rem 0;
+  border-bottom: 1px dashed #eee;
+  color: #555;
+}
+
+.features li:last-child {
+  border-bottom: none;
+}
+
+.features li:before {
+  content: " ";
+  display: inline-block;
+  width: 20px;
+}
+
+.features li:contains("✔") {
+  color: #17b24b;
+}
+
+.features li:contains("✖") {
+  color: #ff6b6b;
+  opacity: 0.7;
+}
+
+.plan-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.free-btn {
+  background: #e0e0e0;
+  color: #555;
+}
+
+.free-btn:hover {
+  background: #d0d0d0;
+}
+
+.pro-btn {
+  background: #17b24b;
+  color: white;
+  box-shadow: 0 5px 15px rgba(23, 178, 75, 0.3);
+}
+
+.pro-btn:hover {
+  background: #129a3d;
+  transform: translateY(-2px);
+}
+
+.badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #ff6b6b;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+}
+
+.note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .plan {
+    max-width: 100%;
+  }
+  
+  .plan.featured {
+    transform: none;
+  }
+}
+
+/* Estilos para el modal de recetas */
+.recipe-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.recipe-modal .modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.recipe-modal h3 {
+  color: #17b24b;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.recipe-modal .recipe-steps p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: #ff6b6b;
+}
+
+
+/* Estilos para las recomendaciones de comida */
+.food-recommendations {
+  width: 100%;
+  margin-top: 3rem;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.food-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.food-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.food-image-container {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.food-card:hover .food-image {
+  transform: scale(1.05);
+}
+
+.calories-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(23, 178, 75, 0.9);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.food-card-content {
+  padding: 1.5rem;
+}
+
+.food-card-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #0c1f15;
+}
+
+.food-card-content p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.recipe-btn {
+  background: #17b24b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.recipe-btn:hover {
+  background: #129a3d;
+}
+
+/* Estilos para el modal de recetas */
+.recipe-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.recipe-modal .modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.recipe-modal h3 {
+  color: #17b24b;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-steps p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: #ff6b6b;
+}
+
+/* Cuando el modal está visible */
+.recipe-modal.active {
+  opacity: 1;
+}
+
+.recipe-modal.active .modal-content {
+  transform: translateY(0);
+}
+
+
+
+
+
+
+/* Sección de Dieta Personalizada */
+.personalized-diet {
+  padding: 5rem 2rem;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.personalized-diet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/leaf-pattern.png') repeat;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.personalized-diet .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.personalized-diet h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0c1f15;
+  font-weight: 600;
+}
+
+.personalized-diet .subtitle {
+  color: #6b6b6b;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.diet-steps {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #f5faf7;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  border: 1px solid #e0f0e5;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: #17b24b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem;
+}
+
+.step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #0c1f15;
+}
+
+.step p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.diet-features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem 0;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e8f5e9;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-box h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #17b24b;
+}
+
+.feature-box p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.cta-container {
+  margin-top: 3rem;
+}
+
+.diet-cta-btn {
+  background: #17b24b;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(23, 178, 75, 0.3);
+}
+
+.diet-cta-btn:hover {
+  background: #129a3d;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(23, 178, 75, 0.4);
+}
+
+.small-text {
+  margin-top: 1rem;
+  color: #888;
+  font-size: 0.8rem;
+}
+
+/* Mejoras para la sección de simulación */
+.simulation {
+  background: linear-gradient(135deg, #f0faf4 0%, #e0f5e8 100%);
+}
+
+.simulation h2 {
+  color: #0c1f15;
+  font-weight: 600;
+}
+
+.simulation p {
+  color: #555;
+}
+
+#nutrition-form {
+  background: white;
+  border: 1px solid #d0e8d8;
+}
+
+.simulation-btn {
+  background: linear-gradient(135deg, #17b24b 0%, #2e8b57 100%);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.results-container {
+  background: white;
+  border: 1px solid #d0e8d8;
+}
+
+.result-value {
+  color: #17b24b;
+}
+
+.food-card {
+  border: 1px solid #e0f0e5;
+}
+
+.food-card:hover {
+  border-color: #17b24b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .diet-steps, .diet-features {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step, .feature-box {
+    max-width: 100%;
+  }
+  
+  .personalized-diet h2 {
+    font-size: 2rem;
+  }
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión | EcoBite Essentials</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Mismo navbar que index.html -->
+  <header class="navbar">
+    <div class="logo">EcoBite<sup>Essentials</sup></div>
+    <nav>
+     <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#power-health">Ventajas</a></li>
+      <li><a href="#collection">MarketPlace</a></li>
+      <li><a href="#">VersionPro</a></li>
+    </ul>
+    </nav>
+    <a href="register.html" class="cta">Registrarse</a>
+  </header>
+
+  <!-- Formulario de Login -->
+  <section class="auth-section">
+    <div class="auth-container">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="password" placeholder="Contraseña" required>
+        <button type="submit" class="auth-btn">Ingresar</button>
+      </form>
+      <p class="auth-text">¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+    </div>
+  </section>
+
+  <p class="auth-text"><a href="#">¿Olvidaste tu contraseña?</a></p>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
