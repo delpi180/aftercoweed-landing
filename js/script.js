@@ -263,4 +263,26 @@ function showRecipe(name, recipe) {
       document.body.style.overflow = 'auto'; // Restaurar scroll
     }, 300);
   }
-}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.getElementById("carousel");
+  if (!track) return;
+
+  let currentScroll = 0;
+  const step = 260;
+  const scrollDelay = 3000;
+
+  function scrollNext() {
+    const maxScrollLeft = track.scrollWidth - track.clientWidth;
+
+    if (track.scrollLeft + step >= maxScrollLeft) {
+      track.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      track.scrollBy({ left: step, behavior: "smooth" });
+    }
+  }
+
+  setInterval(scrollNext, scrollDelay);
+});
+ }

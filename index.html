@@ -10,32 +10,41 @@
   <!-- Header Navigation -->
   <header class="navbar">
   <div class="logo">EcoBite</div>
-  <nav>
-    <ul>
+
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+  <nav class="nav-links">
+    <ul class="menu">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="#power-health">Ventajas</a></li>
       <li><a href="#collection">MarketPlace</a></li>
       <li><a href="#">VersionPro</a></li>
     </ul>
+    <div class="auth-buttons">
+      <a href="login.html" class="cta">Iniciar Sesión</a>
+      <a href="register.html" class="cta secondary">Registrarse</a>
+    </div>
   </nav>
-  <div class="auth-buttons">
-    <a href="login.html" class="cta">Iniciar Sesión</a>
-    <a href="register.html" class="cta secondary">Registrarse</a>
-  </div>
 </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+<section class="hero">
   <div class="hero-content">
     <h1>
       <span>Transforma</span> tu salud<br>con EcoBite
     </h1>
-    <p>Descubre el poder de la alimentación saludable, dietas sostenibles y un seguimiento por nutricionistas profesionales</p>
+    <p>Descubre el poder de la alimentación saludable, dietas sostenibles y un seguimiento por nutricionistas profesionales.</p>
     <div class="hero-buttons">
       <button class="hero-btn">Explorar productos</button>
-      <a href="#simulation" class="hero-btn secondary">Simulación nutricional</a>
+      <a href="#collection" class="hero-btn secondary">Simulación nutricional</a>
     </div>
   </div>
+
+  <div class="hero-image">
+    <img src="assets/salmon.jpg" alt="Comida saludable">
+  </div>
+</section>
   
   <!-- Elemento decorativo opcional -->
   <div class="hero-decoration">
@@ -45,7 +54,89 @@
 </section>
 
 
-
+<!-- Sección Problema & Oportunidades -->
+<section class="problem-opportunity">
+  <div class="container">
+    <h2>🚨 El Problema vs. 🌟 Nuestra Solución</h2>
+    <p class="subtitle">Entendemos los desafíos actuales y te ofrecemos las herramientas para superarlos</p>
+    
+    <div class="comparison-container">
+      <!-- Columna de Problemas -->
+      <div class="problems-column">
+        <div class="section-header">
+          <h3>Los Desafíos Actuales</h3>
+          <div class="icon-problem">⚠️</div>
+        </div>
+        
+        <div class="problem-card">
+          <div class="problem-icon">🕒</div>
+          <h4>Falta de Tiempo</h4>
+          <p>Vidas ocupadas dificultan la planificación de comidas saludables y la preparación de alimentos nutritivos.</p>
+        </div>
+        
+        <div class="problem-card">
+          <div class="problem-icon">🤔</div>
+          <h4>Desinformación Nutricional</h4>
+          <p>Exceso de información contradictoria sobre dietas y nutrición que confunde a los consumidores.</p>
+        </div>
+        
+        <div class="problem-card">
+          <div class="problem-icon">💸</div>
+          <h4>Costo Elevado</h4>
+          <p>Los alimentos saludables y los servicios de nutrición profesional suelen ser inaccesibles para muchos.</p>
+        </div>
+      </div>
+      
+      <!-- División visual -->
+      <div class="divider-column">
+        <div class="divider-line"></div>
+        <div class="transform-arrow">➔</div>
+        <div class="divider-line"></div>
+      </div>
+      
+      <!-- Columna de Oportunidades/Soluciones -->
+      <div class="opportunities-column">
+        <div class="section-header">
+          <h3>Lo Que Ofrecemos</h3>
+          <div class="icon-opportunity">💡</div>
+        </div>
+        
+        <div class="opportunity-card">
+          <div class="opportunity-icon">⏱️</div>
+          <h4>Planificación Automatizada</h4>
+          <p>Generamos planes semanales con lista de compras incluida, ahorrándote horas de planificación.</p>
+        </div>
+        
+        <div class="opportunity-card">
+          <div class="opportunity-icon">📚</div>
+          <h4>Información Certificada</h4>
+          <p>Contenido avalado por nutricionistas, sin modas pasajeras, solo ciencia nutricional real.</p>
+        </div>
+        
+        <div class="opportunity-card">
+          <div class="opportunity-icon">💰</div>
+          <h4>Acceso Económico</h4>
+          <p>Servicio premium a una fracción del costo de una consulta nutricional tradicional.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">87%</div>
+        <div class="stat-label">de usuarios mejoran sus hábitos alimenticios</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5.2h</div>
+        <div class="stat-label">tiempo semanal ahorrado en planificación</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">3x</div>
+        <div class="stat-label">más económico que alternativas tradicionales</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- 8 Razones para Elegir EcoBite -->
 <section class="eight-reasons">
@@ -290,33 +381,91 @@
   </div>
 </section>
 
-  <!-- Supplement Collection Section -->
-  <section class="collection">
-    <div class="collection-header">
-      <h2>Comida saludable a la puerta de tu casa</h2>
-      <p>Explora el market place de comida saludable</p>
-    </div>
-    <div class="product-cards">
-      <div class="card">
-        <img src="assets/bowl.jpg" alt="EnergyBoost+">
-        <h3>Ensalada de frutas clasica</h3>
-        <p class="price">$10.99 <span class="old-price">$19.99</span></p>
-        <button class="buy-btn">→</button>
-      </div>
-      <div class="card">
-        <img src="assets/quinua.jpeg" alt="Wellness360">
-        <h3>QUINUA</h3>
-        <p class="price">$25.99 <span class="old-price">$39.99</span></p>
-        <button class="buy-btn">→</button>
-      </div>
-      <div class="card">
-        <img src="assets/salmon.jpg" alt="CalmMind+">
-        <h3>SALOM CON AVENA</h3>
-        <p class="price">$20.99 <span class="old-price">39.99</span></p>
-        <button class="buy-btn">→</button>
+
+<!-- market -->
+  <section class="marketplace">
+    <h2>🥗 Marketplace de Comida Saludable</h2>
+    <p class="subtitle">10 opciones saludables seleccionadas para ti</p>
+
+    <div class="carousel-container">
+      <div class="carousel-track" id="carousel">
+        <div class="market-card">
+          <img src="assets/salmon.jpg" alt="Salmón con Quinoa">
+          <h3>Salmón con Quinoa</h3>
+          <p>Salmón al horno con ensalada fresca.</p>
+          <div class="stars">★★★★★</div>
+          <span class="price">S/ 22.00</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/smootihe.jpg" alt="Smoothie Detox">
+          <h3>Smoothie Detox</h3>
+          <p>Espinaca, plátano, piña y chía.</p>
+          <div class="stars">★★★★☆</div>
+          <span class="price">S/ 9.50</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/wrap.jpeg" alt="Wrap de Vegetales">
+          <h3>Wrap de Vegetales</h3>
+          <p>Hummus, espinaca, palta y zanahoria.</p>
+          <div class="stars">★★★★★</div>
+          <span class="price">S/ 12.00</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/fruta.jpeg" alt="Ensalada de Frutas">
+          <h3>Ensalada de Frutas</h3>
+          <p>Frutas mixtas sin azúcar.</p>
+          <div class="stars">★★★★☆</div>
+          <span class="price">S/ 7.50</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/bowl.jpg" alt="Bowl Nutritivo">
+          <h3>Bowl Nutritivo</h3>
+          <p>Quinoa, palta, pollo y hojas verdes.</p>
+          <div class="stars">★★★★★</div>
+          <span class="price">S/ 14.00</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/quinua.jpeg" alt="Quinua con Verduras">
+          <h3>Quinua con Verduras</h3>
+          <p>Guiso de quinua con vegetales.</p>
+          <div class="stars">★★★☆☆</div>
+          <span class="price">S/ 10.00</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/nutricion.jpg" alt="Tazón Energético">
+          <h3>Tazón Energético</h3>
+          <p>Batido con avena, banana y linaza.</p>
+          <div class="stars">★★★★☆</div>
+          <span class="price">S/ 8.00</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/PolloP.jpg" alt="Pollo a la Plancha">
+          <h3>Pollo a la Plancha</h3>
+          <p>Con ensalada y arroz integral.</p>
+          <div class="stars">★★★★★</div>
+          <span class="price">S/ 13.00</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/obes.jpg" alt="Snack Saludable">
+          <h3>Snack Saludable</h3>
+          <p>Mix de frutos secos sin sal.</p>
+          <div class="stars">★★★☆☆</div>
+          <span class="price">S/ 6.00</span>
+        </div>
+        <div class="market-card">
+          <img src="assets/balanza.jpg" alt="Yogurt con Cereal">
+          <h3>Yogurt con Cereal</h3>
+          <p>Yogurt natural con granola casera.</p>
+          <div class="stars">★★★★☆</div>
+          <span class="price">S/ 7.00</span>
+        </div>
       </div>
     </div>
   </section>
+
+
+
+
 
 
 
