@@ -1,41 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar Sesión | EcoBite Essentials</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBite | Usuario</title>
+  <link rel="stylesheet" href="css\usuario.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="js\usuario.js"></script>
 </head>
 <body>
-  <!-- Mismo navbar que index.html -->
-  <header class="navbar">
-    <div class="logo">EcoBite<sup>Essentials</sup></div>
-    <nav>
-     <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="#power-health">Ventajas</a></li>
-      <li><a href="#collection">MarketPlace</a></li>
-      <li><a href="#">VersionPro</a></li>
-    </ul>
-    </nav>
-    <a href="register.html" class="cta">Registrarse</a>
-  </header>
-
-  <!-- Formulario de Login -->
-  <section class="auth-section">
-    <div class="auth-container">
-      <h2>Iniciar Sesión</h2>
-      <form id="loginForm">
-        <input type="email" placeholder="Correo electrónico" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button type="submit" class="auth-btn">Ingresar</button>
-      </form>
-      <p class="auth-text">¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>EcoBite</h2>
+      <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
     </div>
-  </section>
+    <nav class="sidebar-menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#progreso">Progreso</a>
+      <a href="#dieta">Dieta Semanal</a>
+      <a href="#marketplace">Marketplace</a>
+      <a href="index.html">Cerrar sesión</a>
+    </nav>
+  </aside>
 
-  <p class="auth-text"><a href="#">¿Olvidaste tu contraseña?</a></p>
+  <!-- Main content -->
+  <main class="main-content">
+    <section id="inicio" class="section">
+      <h1>Bienvenido, <span id="username">Jonatan</span> 👋</h1>
 
-  <script src="js/auth.js"></script>
+      <!-- Gráficos de progreso -->
+      <div class="progress-circles">
+        <!-- Gráfico de días de dieta (arriba) -->
+        <div class="progress-card center">
+          <h3>Días de Dieta</h3>
+          <canvas id="dietDaysChart" width="300" height="300"></canvas>
+        </div>
+
+        <!-- Gráfico de calorías consumidas (abajo, izquierda) -->
+        <div class="progress-card left">
+          <h3>Calorías Consumidas</h3>
+          <canvas id="caloriesChart" width="300" height="300"></canvas>
+        </div>
+
+        <!-- Gráfico de progreso de la meta (abajo, derecha) -->
+        <div class="progress-card right">
+          <h3>Progreso de Meta</h3>
+          <canvas id="goalProgressChart" width="300" height="300"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="progreso" class="section">
+      <h2>Tu Progreso Diario</h2>
+      <div class="progress-cards">
+        <div class="card">Calorías: 1,450 kcal / 2,000 kcal</div>
+        <div class="card">Peso: 70 kg</div>
+        <div class="card">Agua: 1.5 L / 2.5 L</div>
+      </div>
+    </section>
+
+    <section id="dieta" class="section">
+      <h2>Dieta Semanal</h2>
+      <div class="diet-cards">
+        <div class="card">Lunes: Desayuno, Almuerzo, Cena</div>
+        <div class="card">Martes: Desayuno, Almuerzo, Cena</div>
+        <!-- Agrega más días si deseas -->
+      </div>
+    </section>
+
+    <section id="marketplace" class="section">
+      <h2>Marketplace Saludable</h2>
+      <div class="market-cards">
+        <div class="card">
+          <h3>Avena Orgánica</h3>
+          <p>Rica en fibra y energía</p>
+        </div>
+        <div class="card">
+          <h3>Batido Proteico</h3>
+          <p>Post-entreno vegano</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

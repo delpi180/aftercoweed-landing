@@ -236,6 +236,22 @@ function showRecipe(name, recipe) {
     </div>
   `;
   
+
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  });
+
+  const fadeInTargets = document.querySelectorAll(".fade-in");
+  fadeInTargets.forEach(el => observer.observe(el));
+});
+
+
+
   // Añadir al documento
   document.body.appendChild(modal);
   document.body.style.overflow = 'hidden'; // Deshabilitar scroll
@@ -286,3 +302,32 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(scrollNext, scrollDelay);
 });
  }
+
+
+ 
+
+
+const ctx = document.getElementById('statsChart').getContext('2d');
+const statsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+        datasets: [{
+            label: 'Calorías consumidas',
+            data: [1800, 2000, 1950, 2100, 2050],
+            borderColor: '#57e389',
+            backgroundColor: 'rgba(87, 227, 137, 0.2)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.4
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+ 

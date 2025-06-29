@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBite | Usuario</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome (para iconos) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="css\usuario.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="js\usuario.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="d-flex">
+    <aside class="sidebar p-3" id="sidebar">
+      <h2>EcoBite</h2>
+      <nav>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#inicio" class="nav-link active">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#progreso" class="nav-link">Progreso</a>
+          </li>
+          <li class="nav-item">
+            <a href="#dieta" class="nav-link">Dieta Semanal</a>
+          </li>
+          <li class="nav-item">
+            <a href="#marketplace" class="nav-link">Marketplace</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Cerrar sesión</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="container-fluid p-4" style="margin-left: 250px;">
+      <section id="inicio">
+        <h1>Bienvenido, <span id="username">Jonatan</span> 👋</h1>
+
+        <!-- Gráficos de progreso -->
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body text-center">
+                <h5 class="card-title">Días de Dieta</h5>
+                <canvas id="dietDaysChart" width="300" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body text-center">
+                <h5 class="card-title">Calorías Consumidas</h5>
+                <canvas id="caloriesChart" width="300" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body text-center">
+                <h5 class="card-title">Progreso de Meta</h5>
+                <canvas id="goalProgressChart" width="300" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="progreso">
+        <h2>Tu Progreso Diario</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5>Calorías</h5>
+                <p class="display-4">1,450 kcal</p>
+                <p>Meta: 2,000 kcal</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5>Peso</h5>
+                <p class="display-4">70 kg</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5>Agua</h5>
+                <p class="display-4">1.5 L</p>
+                <p>Meta: 2.5 L</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dieta">
+        <h2>Dieta Semanal</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5>Lunes</h5>
+                <p>Desayuno, Almuerzo, Cena</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5>Martes</h5>
+                <p>Desayuno, Almuerzo, Cena</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="marketplace">
+        <h2>Marketplace Saludable</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5>Avena Orgánica</h5>
+                <p>Rica en fibra y energía</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5>Batido Proteico</h5>
+                <p>Post-entreno vegano</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

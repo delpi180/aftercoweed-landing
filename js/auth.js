@@ -3,7 +3,7 @@ if (document.getElementById('loginForm')) {
   document.getElementById('loginForm').addEventListener('submit', (e) => {
     e.preventDefault();
     alert('¡Inicio de sesión exitoso! Redirigiendo...');
-    window.location.href = "index.html"; // Redirige al home tras login
+    window.location.href = "dashboard.html"; // Redirige al home tras login
   });
 }
 

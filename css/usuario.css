@@ -1,0 +1,132 @@
+/* Estilo general */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1b2a22;
+  color: #ffffff;
+}
+
+.sidebar {
+  background-color: #0f1d14;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  padding: 2rem;
+}
+
+.sidebar h2 {
+  color: #aef5c1;
+  font-size: 2rem;
+}
+
+.sidebar-menu a {
+  color: #b3d7bb;
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+  background-color: #254e3c;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 250px;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #aef5c1;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.progress-circles {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.progress-card {
+  background-color: #244e3a;
+  padding: 25px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+canvas {
+  width: 100% !important;
+  height: 250px !important;
+  border-radius: 10px;
+  border: 2px solid #14532d;
+  transition: opacity 0.5s ease;
+}
+
+/* Barra de progreso */
+progress {
+  width: 80%;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #b3d7bb;
+}
+
+/* Cards */
+.card {
+  background-color: #1e3a31;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.display-4 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e7f5e2;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 10;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .card {
+    min-width: 100%;
+  }
+
+  .progress-circles {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
